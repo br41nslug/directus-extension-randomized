@@ -26,19 +26,23 @@ export default defineEndpoint({
 				schema: _req.schema,
 				accountability: _req.accountability
 			});
-			if (+_req.sanitizedQuery?.limit > 0) {
-				const limit: number = _req.sanitizedQuery.limit;
-				const ids = getRandomItems(await itemService.readByQuery({ 
-					..._req.sanitizedQuery, limit: -1, fields: ['id'] 
-				}), limit).map(({ id }) => id);
-				const filter = _req.sanitizedQuery.filter ? 
-					{ _and: [{ id: { _in: ids } }, _req.sanitizedQuery.filter] } :
-					{ id: { _in: ids } }
-				const data = await itemService.readByQuery({ ..._req.sanitizedQuery, filter });
-				res.json(data);
-			} else {
-				const data = await itemService.readByQuery(_req.sanitizedQuery);
-				res.json(shuffleArray(data));
+			try {
+				if (+_req.sanitizedQuery?.limit > 0) {
+					const limit: number = _req.sanitizedQuery.limit;
+					const ids = getRandomItems(await itemService.readByQuery({ 
+						..._req.sanitizedQuery, limit: -1, fields: ['id'] 
+					}), limit).map(({ id }) => id);
+					const filter = _req.sanitizedQuery.filter ? 
+						{ _and: [{ id: { _in: ids } }, _req.sanitizedQuery.filter] } :
+						{ id: { _in: ids } }
+					const data = await itemService.readByQuery({ ..._req.sanitizedQuery, filter });
+					res.json(data);
+				} else {
+					const data = await itemService.readByQuery(_req.sanitizedQuery);
+					res.json(shuffleArray(data));
+				}
+			} catch (err) {
+				res.json(err)
 			}
 		});
 	},
