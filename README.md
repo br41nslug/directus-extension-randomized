@@ -10,7 +10,7 @@ As the name suggests this extension will enable Randomized results mirroring the
 - Build the extension\
   `npm run build`
 - Move the result to your extension folder\
-  `mv dist extensions/hooks/directus-websocket-subscribe`
+  `mv dist extensions/endpoints/directus-websocket-subscribe`
 - Restart your Directus instance
 
 ## Usages
