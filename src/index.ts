@@ -9,7 +9,7 @@ function shuffleArray(input: any[]): any[] {
 	return result;
 }
 function getRandomItems(input: any[], amount: number): any[] {
-	let result = [], _amount = Math.min(amount, input.length - 1);
+	let result = [], _amount = Math.min(amount, input.length);
 	while (result.length < _amount) {
 		const element = input.splice(Math.floor(Math.random() * input.length), 1);
 		result.push(element[0]);       
