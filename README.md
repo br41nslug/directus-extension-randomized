@@ -4,6 +4,11 @@ As the name suggests this extension will enable Randomized results mirroring the
 > Tested with Directus 9.22.1
 
 ## Installation
+
+The package is published to npm:
+`npm install directus-extension-randomized-endpoint`
+
+**Manual Installation**
 - Download or fork the repository
 - Install the requirements\
   `npm install`
