@@ -1,7 +1,7 @@
 # Directus Extension Randomized Results
 As the name suggests this extension will enable Randomized results mirroring the Directus `/items/:collection` endpoint.
 
-> Tested with Directus 9.23.1
+> Tested with Directus 9.23.4
 
 ## Installation
 
