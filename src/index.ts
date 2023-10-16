@@ -1,25 +1,30 @@
 import { defineEndpoint } from '@directus/extensions-sdk';
 
 function shuffleArray(input: any[]): any[] {
-	let m = input.length, t, i;
-	while (m) {
-		i = Math.floor(Math.random() * m--);
-		t = input[m];
-		input[m] = input[i];
-		input[i] = t;
+	let currentIndex = input.length, temporaryValue, randomIndex;
+
+	while (currentIndex !== 0) {
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex--;
+		temporaryValue = input[currentIndex];
+		input[currentIndex] = input[randomIndex];
+		input[randomIndex] = temporaryValue;
 	}
 	return input;
 }
+
 function getRandomItems(input: any[], amount: number): any[] {
-	let l = input.length, m = Math.min(amount, l), t, i;
-	while (m) {
-		i = Math.floor(Math.random() * l--);
-		t = input[l];
-		input[l] = input[i];
-		input[i] = t;
-		m--;
+	let inputLength = input.length, remainingElements = Math.min(amount, inputLength), temporaryValue, randomIndex;
+
+	while (remainingElements) {
+		randomIndex = Math.floor(Math.random() * inputLength);
+		inputLength--;
+		temporaryValue = input[inputLength];
+		input[inputLength] = input[randomIndex];
+		input[randomIndex] = temporaryValue;
+		remainingElements--;
 	}
-	return input.slice(l);
+	return input.slice(inputLength);
 }
 
 export default defineEndpoint({
