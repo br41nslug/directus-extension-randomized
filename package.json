@@ -1,6 +1,6 @@
 {
 	"name": "directus-extension-randomized-endpoint",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"author": "brainslug",
 	"keywords": [
 		"directus",
@@ -19,9 +19,9 @@
 		"dev": "directus-extension build -w --no-minify"
 	},
 	"devDependencies": {
-		"@directus/extensions-sdk": "10.1.11",
-		"@types/node": "^18.18.5",
-		"typescript": "^5.2.2"
+		"@directus/extensions-sdk": "11.0.1",
+		"@types/node": "^18.19.1",
+		"typescript": "^5.4.2"
 	},
 	"repository": {
 		"type": "git",

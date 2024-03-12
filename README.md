@@ -1,22 +1,7 @@
 # Directus Extension Randomized Results
 As the name suggests this extension will enable Randomized results mirroring the Directus `/items/:collection` endpoint.
 
-> Tested with Directus 10.6.3
-
-## Installation
-
-The package is published to npm:
-`npm install directus-extension-randomized-endpoint`
-
-**Manual Installation**
-- Download or fork the repository
-- Install the requirements\
-  `npm install`
-- Build the extension\
-  `npm run build`
-- Move the result to your extension folder\
-  `mv dist extensions/endpoints/directus-extension-randomized`
-- Restart your Directus instance
+> Tested with Directus 10.10.4
 
 ## Usages
 
